@@ -43,7 +43,7 @@ public class SavingSystem : MonoBehaviour
     public void Save(string _fileName)
     {
         Debug.Log("Save");
-        mapInfos.SaveDatas(mainEditor.width, mainEditor.height, mainEditor._Tab);
+        mapInfos.SaveDatas(mainEditor.width, mainEditor.height, mainEditor.GetData());
 
         XmlSerializer serializer = new XmlSerializer(typeof(MapInfos));
         FileStream stream = new FileStream(Application.dataPath + "/StreamingFiles/XML/" + _fileName+ ".xml", FileMode.Create);
